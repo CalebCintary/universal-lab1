@@ -1,4 +1,4 @@
-# Programming exercise 1
+# Programming lab 1
 ***
 ### Requirements
 For compiling that project you have to have that compilers and software:
