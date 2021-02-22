@@ -52,3 +52,23 @@ Also you can use different Makefile generators, but that isn't checked:
 * NMake Makefiles JOM
 * Unix Makefiles
 * Watcom WMake
+
+### Using
+
+There is four ways to use app
+  * ```shell
+    universal_lab1 --encode <file_path> [-f <file_path>]
+    ``` 
+    This creates the Hemming code from the file. -f saves result into file
+* ```shell
+    universal_lab1 --corrupt <file_path> [-f <file_path>]
+    ``` 
+  This corrupts the Hemming code from the file. -f saves result into file
+* ```shell
+    universal_lab1 --repair <file_path> [-f <file_path>]
+    ``` 
+  This repairs the Hemming code from the file. -f saves result into file
+* ```shell
+    universal_lab1 --decode <file_path> [-f <file_path>]
+    ``` 
+  This decodes the Hemming code from the file. -f saves result into file
