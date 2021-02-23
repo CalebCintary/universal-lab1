@@ -4,6 +4,9 @@
 
 #include "hemming.h"
 
+#include <chrono>
+#include <random>
+
 using namespace std;
 
 string *corrupt(string *fname) {
@@ -19,14 +22,17 @@ string *corrupt(string *fname) {
         int i = 0;
         while (i < str->length()) {
             bool docorrupt = false;
-            srand(time(0));
+            unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+            std::default_random_engine generator(seed);
+            std::uniform_int_distribution<int> docorrupt_chance(1, 4);
+            std::uniform_int_distribution<int> placechance(0, 11);
 
-            int i1 = 1 + (rand() % 4);
+            int i1 = docorrupt_chance(generator);
             if (i1 == 1) {
                 docorrupt = true;
             }
             if (docorrupt) {
-                int place = rand() % 12;
+                int place = placechance(generator);
                 if ((*(str))[i + place] == '1') {
                     (*(str))[i + place] = '0';
                 } else {
