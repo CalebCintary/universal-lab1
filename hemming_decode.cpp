@@ -7,6 +7,7 @@
 std::string * decode(const std::string &fname) {
     std::ifstream fis;
     fis.open(fname);
+    fis.unsetf(std::ios_base::skipws);
     if (!fis.is_open()) {
         throw std::runtime_error("Failed to open file");
     }

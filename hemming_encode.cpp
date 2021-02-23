@@ -11,6 +11,7 @@ string* toHemming(char a);
 string *encode(const string &arg2) {
     ifstream fis;
     fis.open(arg2);
+    fis.unsetf(ios_base::skipws);
 
     auto* array = new string;
     if (fis.is_open()) {

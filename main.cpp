@@ -7,6 +7,9 @@ using namespace std;
 
 
 int main(int argc, char* argv[]) {
+
+
+
     if (argc == 3) {
         string arg1 (argv[1]);
         string arg2 (argv[2]);
@@ -86,6 +89,7 @@ int main(int argc, char* argv[]) {
         if ((arg1 == "--decode") && (arg3 == "-f")) {
             ofstream fos;
             fos.open(arg4);
+            fos.unsetf(std::ios_base::skipws);
             if (fos.is_open()) {
                 auto str = decode(arg2);
                 fos << *str;

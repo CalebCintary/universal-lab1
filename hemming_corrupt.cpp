@@ -9,6 +9,7 @@ using namespace std;
 string *corrupt(string *fname) {
     ifstream fis;
     fis.open(*fname);
+    fis.unsetf(ios_base::skipws);
     if (fis.is_open()) {
         auto str = new string;
         fis >> *str;
